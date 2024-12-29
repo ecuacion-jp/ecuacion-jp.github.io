@@ -5,9 +5,6 @@
 - Obtained on 2024/12/29, at commit `d5efae6` from https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml  
 (Updates while unknown are not very preferable, so the copied file is referred.)
 
-
-
-
 ## Suppression Filters
 
 There are some kinds of suppression filters for `checkstyle`.
