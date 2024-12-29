@@ -16,6 +16,7 @@
 
 - google_checks_ecuacion_changed.xml: Downloaded from the following URL. Filename changed.
 　https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
+ (as of `d5efae6`)
 
 - changed point on google_checks_ecuacion_changed.xml:
 　- Inside of <module name="SuppressionFilter">:  to refer "ecuacion_suppression_filter_for_google_checks_ecuacion_changed.xml".
