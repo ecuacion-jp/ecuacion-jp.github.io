@@ -22,7 +22,7 @@
  
 <suppressions>
 
-	<!-- license-mavevn-plugin creates just above the package declaration and violates this check -->
+	<!-- license-maven-plugin adds license terms just above the package declaration and violates this check -->
 	<suppress checks="EmptyLineSeparator" message="'package'.*"/>
 
 	<!-- To "empty" a line a whitespace need to be removed manually.    -->	
