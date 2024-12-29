@@ -8,7 +8,7 @@
 
 
 
-## suppression filters
+## Suppression Filters
 
 There are some kinds of suppression filters for `checkstyle`.
 
