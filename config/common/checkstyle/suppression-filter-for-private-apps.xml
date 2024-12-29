@@ -25,7 +25,7 @@
 	<!-- license-mavevn-plugin creates just above the package declaration and violates this check -->
 	<suppress checks="EmptyLineSeparator" message="'package'.*"/>
 	
-	<!-- javadoc not created in "*.internal" package  -->
+	<!-- javadoc-related checks suppressed -->
 	<suppress checks=".*Javadoc.*" files=".*.java" />
 	
 	<!-- excluding test -->
