@@ -24,7 +24,9 @@
 
 	<!-- license-maven-plugin adds license terms just above the package declaration and violates this check -->
 	<suppress checks="EmptyLineSeparator" message="'package'.*"/>
-	
+
+	<suppress checks="CustomImportOrder" message=".*は前のインポート・グループから分離する必要があります。" />
+		
 	<!-- javadoc-related checks suppressed -->
 	<suppress checks=".*Javadoc.*" files=".*.java" />
 	
