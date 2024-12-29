@@ -24,12 +24,9 @@
 
 	<!-- license-mavevn-plugin creates just above the package declaration and violates this check -->
 	<suppress checks="EmptyLineSeparator" message="'package'.*"/>
-
-	<!-- To "empty" a line a whitespace need to be removed manually.    -->	
-	<suppress checks="RequireEmptyLineBeforeBlockTagGroup" message="Javadoc.*'@(param|return|see)'.*" />
 	
 	<!-- javadoc not created in "*.internal" package  -->
-	<suppress checks=".*Javadoc.*" files=".*.internal..*.java" />
+	<suppress checks=".*Javadoc.*" files=".*.java" />
 	
 	<!-- excluding test -->
 	<suppress checks=".*" files="Test.*" />
