@@ -21,4 +21,4 @@ There are some kinds of suppression filters for `checkstyle`.
 
 - When you use checkstyle on eclipse, right-click the project -> Maven -> Update Project will set the checkstyle settings on eclipse (.checkstyle).
 
-- ALERT: UPDATE ※eclipse-cs plugin to the latest version. Version 10.21.1 or higher needed.
+- ALERT: UPDATE `eclipse-cs` plugin to the latest version. Version 10.21.1 or higher needed.
