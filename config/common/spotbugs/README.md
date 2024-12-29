@@ -1,4 +1,4 @@
-# checkstyle config
+# spotbugs config
 
 ## Suppression Filters
 
