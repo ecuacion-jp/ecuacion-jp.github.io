@@ -14,11 +14,11 @@ The code is created from the app definition excel file.
 
 ### group
 
-- Introduced automatically.
+- Introduced automatically.  
   You just have to extend the auto generated base repository classes when you create app repository classes.
 
 ### soft delete
 
-- Introduced automatically.
+- Introduced automatically.  
   You just have to extend the auto generated base repository classes when you create app repository classes.
 
