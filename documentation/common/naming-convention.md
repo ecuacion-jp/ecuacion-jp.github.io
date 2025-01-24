@@ -1,6 +1,8 @@
 # naming convention
 
-## IDs of records & fields
+## records, fields and items
+
+### ID
 
 These are used mainly the app with UI like web pages.  
 
@@ -33,7 +35,7 @@ private ChildRecord {
 }
 ```
 
-- fieldId (/ rootRecordFieldId) : `name`, `childRecord.name`, `siblingsChildRecord.name`
+- fieldId : `name`, `childRecord.name`, `siblingsChildRecord.name`
   (It usually specifies the field of the root record. 
    But sometimes it also specifies the field of `childRecord` 
    when there's no form and only `childrecord` exists in the context.)
@@ -53,4 +55,11 @@ private ChildRecord {
   (the name which designates the record class and its property. 
    It's used to obtain display name from `field_name.properties`.
    `siblingsChildRecord.name` is not the itemName because `siblingsChildRecord` is not a record class name.)
+
+### Name
+
+- localized names are called `displayName`.  
+  So if you want to put a displayName to a variable, the name of the variable would be :`recordDisplayName`, `fieldDisplayName`, `itemDisplayName` or simply `displayName`.
+
+- `fieldDisplayName` and `itemName` means the same. But to unify let us recommend `itemName` (because `field` sounds a part of a whole).
 
