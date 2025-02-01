@@ -25,8 +25,7 @@
 	<suppress checks=".*Javadoc.*" files=".*.java" />
 
 	<!-- spring data JPA uses method names with "_" -->
-	<suppress checks="MethodName"
-		message="Method name.*must match pattern.*" />
+	<suppress checks="MethodName" />
 
 	<!-- excluding test -->
 	<suppress checks=".*" files="Test.*" />
