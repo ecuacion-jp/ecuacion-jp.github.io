@@ -4,13 +4,13 @@
 
 ### ID
 
-These are used mainly the app with UI like web pages.  
+These are used mainly in the app with UI like web pages.  
 
 In MVC pattern, Data shown to users is usually put into `form`.
 In ecuacion libraries `record` belongs to the `form`, which means `record` is the direct field of the `form` and it stores and conveys data to the view.
 
 Web apps for example, each page has "components" or "controls" like text boxes and pulldowns. 
-This part describes the name convention of those components in web pages, or records and field in them which belong to a `form`.
+This part of the document describes the name convention of those components in web pages, or records and field in them which belong to a `form`.
 
 Use these classes as an example.
 ```
@@ -52,14 +52,13 @@ private ChildRecord {
    It's used to specify the error items on the screen.)  
 
 - [item]displayNameId : `parentRecord.name`, `childRecord.name`  
-  (the name which designates the record class and its property. 
+  (the name which designates the record class and its property.
    It's used to obtain display name from `field_name.properties`.
    `siblingsChildRecord.name` is not the itemName because `siblingsChildRecord` is not a record class name.)
 
 ### Name
 
-- localized names are called `displayName`.  
-  So if you want to put a displayName to a variable, the name of the variable would be :`recordDisplayName`, `fieldDisplayName`, `itemDisplayName` or simply `displayName`.
+- In the library localized names are called `displayName`.
 
-- `fieldDisplayName` and `itemName` means the same. But to unify let us recommend `itemName` (because `field` sounds a part of a whole).
-
+- `recordDisplayName`, `fieldDisplayName`, `itemDisplayName`, `displayName` sounds okay, but to unify in this library `recordDisplayName` and  `fieldDisplayName` are not used. `itemDisplayName` is the official name, but since it's a bit long you can use `itemName` or `displayName`.
+  (`itemName` can be misunderstood as an html name of the item in some context, so consider the context.)
