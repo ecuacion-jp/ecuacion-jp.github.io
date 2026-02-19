@@ -1,0 +1,13 @@
+jakarta
+ecuacion
+javadoc
+validator
+datatype
+unset
+enum
+payload
+loglevel
+postfix
+postfixes
+timestamp
+csv
