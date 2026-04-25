@@ -301,3 +301,42 @@ import はアルファベット順を維持すること（Google Java Style Guid
 - コメントアウトされた `// throw new BizLogicAppException(...)` 等は変換しない
 - メソッドの throws 宣言から deprecated 例外を削除した結果、
   他の checked exception も宣言がなくなる場合はコンパイルエラーになるので注意
+
+---
+
+# `${+...}` → `#{...}` プロパティ参照構文の変更
+
+`*.properties` ファイル内で他のプロパティファイルのキーを参照する構文が変わった。
+
+## 変換ルール
+
+| 旧 | 新 |
+|---|---|
+| `${+messages:xxx}` | `#{messages:xxx}` |
+| `${+item_names:xxx}` | `#{item_names:xxx}` |
+| `${+strings:xxx}` | `#{strings:xxx}` |
+| `${+enum_names:xxx}` | `#{enum_names:xxx}` |
+| `${+application:xxx}` | `#{application:xxx}` |
+
+また、ファイル種別を省略した `#{xxx}` という新構文も使用可能になった。
+その場合は messages, item_names, strings, enum_names の順に検索する。
+
+## 対象ファイルの抽出
+
+```bash
+grep -rln '\${+' src/ --include="*.properties"
+```
+
+## 作業手順
+
+1. 上記コマンドで対象ファイルを抽出する
+2. `${+` を `#{` に、`${+` 直後の `+` を削除する形で置換する
+   - `${+messages:` → `#{messages:`
+   - `${+item_names:` → `#{item_names:`
+   - （他の fileKind も同様）
+3. ビルド検証を実行する
+
+   ```bash
+   mvn checkstyle:check spotbugs:check
+   mvn javadoc:javadoc
+   ```
