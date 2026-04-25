@@ -15,3 +15,9 @@ datatypes
 apps
 linux
 validators
+app
+popup
+loglevels
+enums
+wildcards
+javascript
