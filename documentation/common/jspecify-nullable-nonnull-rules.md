@@ -14,18 +14,17 @@
 ### Parameters
 
 | Pattern | Example | Reason |
-|---|---|---|
+| --- | --- | --- |
 | `Locale` parameter | `@Nullable Locale locale` | Substituted with `Locale.ROOT` when `null` (avoids server-locale dependency in batch/non-UI contexts) |
 | Optional configuration object | `@Nullable Options options` | May be omitted by the caller |
-| Optional primitive wrapper | `@Nullable Integer packagesShown` | May be omitted by the caller |
 | Optional additional message | `@Nullable String additionalMessage` | May be omitted by the caller |
-| Root bean | `@Nullable Object rootBean` | Not always subject to validation |
-| Message argument varargs | `@Nullable String... messageArgs` | Allows `null` elements at the API boundary |
+| Root bean | `@Nullable Object rootBean` | `null` when no root bean is provided (i.e. item name resolution is not required) |
+| Message argument varargs | `@Nullable String... messageArgs` | Allows `null` elements at the API boundary — callers may pass variable values being displayed, which can themselves be `null` |
 
 ### Fields
 
 | Pattern | Example | Reason |
-|---|---|---|
+| --- | --- | --- |
 | Lazy-initialized field | `private @Nullable Field fieldOfBasisPropertyPath` | Not yet set before `initialize()` is called |
 | Conditionally set field | `private @Nullable String itemNameKeyClassFromAnnotation` | Not always assigned |
 | Optional-value field | `private @Nullable ValidatorKindEnum validatorKind` | Set only under specific conditions |
@@ -33,7 +32,7 @@
 ### Return Values
 
 | Pattern | Example | Reason |
-|---|---|---|
+| --- | --- | --- |
 | Search method (returns `null` when not found) | `@Nullable String getFirstFoundEmbeddedVariable(...)` | Returns `null` when the variable does not exist |
 | Resource acquisition (returns `null` when absent) | `@Nullable ResourceBundle getResourceBundle(...)` | Returns `null` when the properties file does not exist |
 
@@ -109,7 +108,7 @@ strengthens the nullness constraint of an inherited parameter. To suppress this,
 Affected methods:
 
 | Interface | Method | Parameter |
-|---|---|---|
+| --- | --- | --- |
 | `ConstraintValidator` | `initialize()` | annotation parameter |
 | `ConstraintValidator` | `isValid()` | `ConstraintValidatorContext` |
 | `ConstraintValidatorFactory` | `getInstance()` | `Class<T>` |
@@ -122,6 +121,6 @@ The rationale is documented in the Javadoc of each affected `package-info.java`.
 ## 6. What NOT to Do
 
 | Do not | Reason |
-|---|---|
+| --- | --- |
 | Add redundant `@NonNull` to fields, parameters, or return values | `@NullMarked` already implies `@NonNull` |
 | Use Jakarta's `@Nonnull` | Use JSpecify's `@NonNull` exclusively |

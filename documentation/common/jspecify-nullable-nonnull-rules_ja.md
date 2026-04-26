@@ -14,18 +14,17 @@
 ### パラメータ
 
 | パターン | 例 | 理由 |
-|---|---|---|
+| --- | --- | --- |
 | `Locale` パラメータ | `@Nullable Locale locale` | `null` の場合は `Locale.ROOT` で代替（バッチ処理等の非 UI コンテキストでサーバーの locale に左右されないよう） |
 | オプショナルな設定オブジェクト | `@Nullable Options options` | 呼び出し元が省略可能 |
-| オプショナルな primitive ラッパー | `@Nullable Integer packagesShown` | 呼び出し元が省略可能 |
 | オプショナルな追加メッセージ | `@Nullable String additionalMessage` | 呼び出し元が省略可能 |
-| rootBean | `@Nullable Object rootBean` | バリデーション対象外のケースがある |
-| メッセージ引数 varargs | `@Nullable String... messageArgs` | API 境界として `null` 要素を許容 |
+| rootBean | `@Nullable Object rootBean` | rootBean なしで violation を追加した場合（アイテム名の解決が不要な場合）は `null` |
+| メッセージ引数 varargs | `@Nullable String... messageArgs` | API 境界として `null` 要素を許容（処理対象の変数の値を出力する用途のため、その値が `null` の場合があることを許容） |
 
 ### フィールド
 
 | パターン | 例 | 理由 |
-|---|---|---|
+| --- | --- | --- |
 | lazy init フィールド | `private @Nullable Field fieldOfBasisPropertyPath` | `initialize()` 呼び出し前は未設定 |
 | 条件付き設定フィールド | `private @Nullable String itemNameKeyClassFromAnnotation` | 常にセットされるとは限らない |
 | optional 値フィールド | `private @Nullable ValidatorKindEnum validatorKind` | 特定条件のみセット |
@@ -33,7 +32,7 @@
 ### 戻り値
 
 | パターン | 例 | 理由 |
-|---|---|---|
+| --- | --- | --- |
 | 検索系メソッド（見つからない場合 `null`） | `@Nullable String getFirstFoundEmbeddedVariable(...)` | 変数が存在しない場合は `null` |
 | リソース取得（存在しない場合 `null`） | `@Nullable ResourceBundle getResourceBundle(...)` | プロパティファイルが存在しない場合は `null` |
 
@@ -109,7 +108,7 @@ public static <T extends @Nullable Object> T[] requireSizeNonZero(T[] objects)
 対象メソッド:
 
 | インターフェース | メソッド | パラメータ |
-|---|---|---|
+| --- | --- | --- |
 | `ConstraintValidator` | `initialize()` | アノテーションパラメータ |
 | `ConstraintValidator` | `isValid()` | `ConstraintValidatorContext` |
 | `ConstraintValidatorFactory` | `getInstance()` | `Class<T>` |
@@ -122,6 +121,6 @@ public static <T extends @Nullable Object> T[] requireSizeNonZero(T[] objects)
 ## 6. やらないこと
 
 | やらないこと | 理由 |
-|---|---|
+| --- | --- |
 | フィールド・パラメータ・戻り値に冗長な `@NonNull` を付ける | `@NullMarked` により `@NonNull` が暗黙的に適用されるため |
 | Jakarta の `@Nonnull` を使う | JSpecify の `@NonNull` に統一する |
