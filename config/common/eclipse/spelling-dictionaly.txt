@@ -21,3 +21,5 @@ loglevels
 enums
 wildcards
 javascript
+basenames
+classpath
